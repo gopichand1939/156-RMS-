@@ -1,12 +1,18 @@
 // server.js
-const express = require('express');
+
 const dotenv = require('dotenv');
+dotenv.config();
+
+const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 const connectDB = require('./config/db');
 
-dotenv.config();
+
+// Debugging: Check if environment variables are loaded
+console.log("MONGO_URI:", process.env.MONGO_URI);
+console.log("PORT:", process.env.PORT);
 
 // Initialize Express app
 const app = express();
